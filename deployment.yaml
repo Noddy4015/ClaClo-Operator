@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claclo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: claclo
+  template:
+    metadata:
+      labels:
+        app: claclo
+    spec:
+      containers:
+      - name: claclo
+        image: us-central1-docker.pkg.dev/operator-422215/claclo/claclo-docker
+        ports:
+        - containerPort: 8080
+
